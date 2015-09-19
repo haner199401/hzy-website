@@ -11,36 +11,6 @@ var DialogType = {
     tip: 'tip'
 };
 
-/**
- * calc font-size
- */
-(function (doc, win) {
-
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        maxDevicewidth = 480, //最大设备宽度
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) {
-                log('documentElement.clientWidth is undefined!');
-                return;
-            }
-            if (clientWidth >= maxDevicewidth) {
-                clientWidth = maxDevicewidth;
-            }
-            docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
-        };
-    //方便计算
-    win.px2rem = function (px) {
-        return px / 20 / 2;
-    };
-
-    if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
-
-
 // Ajax Tools
 var Ajax = (function(){
 

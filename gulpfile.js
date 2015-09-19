@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
+    pngquant = require('imagemin-pngquant'), //png图片压缩插件
     rev = require('gulp-rev'),
     revReplace = require('gulp-rev-replace'),
     rev_manifest_file_path = './rev-manifest.json',
@@ -62,7 +63,8 @@ gulp.task('scripts', function () {
 gulp.task('images', function () {
     return gulp.src(src.img)
         .pipe($.cache($.imagemin({
-            progressive: true
+            progressive: true,
+            use: [pngquant()]
         })))
         .pipe(gulp.dest(dest.img));
 });
