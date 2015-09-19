@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 var src = {
     css: 'app/assets/styles/**/*',
-    img: 'app/assets/image/*.{png,jpg,jpeg,gif,ico}',
+    img: 'app/assets/image/*.{png,jpg,gif,ico}',
     js: 'app/assets/scripts/**/*',
     tmpl: 'app/**/*.jade'
 };
@@ -62,8 +62,7 @@ gulp.task('scripts', function () {
 gulp.task('images', function () {
     return gulp.src(src.img)
         .pipe($.cache($.imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}]
+            progressive: true
         })))
         .pipe(gulp.dest(dest.img));
 });
