@@ -19,7 +19,6 @@
   "homepage": "https://github.com/haner199401/hzy-website#readme",
   "dependencies": {
     "gulp": "^3.9.0",
-    //"gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.10.0",
     "imagemin-pngquant": "^4.2.0"
   },
