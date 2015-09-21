@@ -1,0 +1,200 @@
+body,
+p,
+blockquote,
+figure,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+menu,
+dir,
+ol,
+dl,
+dd,
+fieldset,
+input[type=radio],
+input[type=checkbox],
+input[type=range],
+pre,
+xmp,
+plaintext,
+listing {
+  margin: 0;
+}
+ul,
+menu,
+dir,
+ol,
+legend,
+fieldset,
+input,
+input[type=password],
+input[type=search],
+isindex,
+textarea,
+input[type=hidden],
+input[type=image],
+input[type=file],
+input[type=radio],
+input[type=checkbox],
+input[type=range],
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+  padding: 0;
+}
+input[type=search],
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  -webkit-appearance: none;
+}
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+cite,
+var,
+address,
+em {
+  font-style: normal;
+}
+strong {
+  font-weight: 400;
+}
+a:-webkit-any-link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: underline;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+iframe {
+  border: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+select,
+button,
+input {
+  color: inherit;
+}
+html {
+  -webkit-text-size-adjust: none;
+}
+a {
+  color: #333;
+}
+em {
+  font-style: normal;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.f_x {
+  font-size: 20px;
+}
+.f_l {
+  font-size: 18px;
+}
+.f_b {
+  font-size: 14px;
+}
+.f_n {
+  font-size: 12px;
+}
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.t_c {
+  text-align: center;
+}
+.t_r {
+  text-align: right;
+}
+.t_l {
+  text-align: left;
+}
+body {
+  background: #edf2f5;
+}
+header .container,
+footer .container,
+section.container {
+  width: 1020px;
+  margin: auto;
+}
+header .h_line {
+  background: #449ce6;
+  height: 4px;
+}
+header .h_content {
+  height: 98px;
+  background: #e0eeef;
+}
+header .container {
+  height: 98px;
+}
+.static_banner {
+  background: url("../image/bgs.png") no-repeat;
+  background-position: 0 -20px;
+  height: 238px;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+footer {
+  background: #556879;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+footer .container {
+  text-align: center;
+  height: 52px;
+  line-height: 52px;
+}
+footer a {
+  display: inline-block;
+  margin: 0 20px;
+}
