@@ -5,12 +5,18 @@ html(lang="en")
         link(rel="stylesheet" ,href="/assets/styles/index.min.css")
         title 首页
     body
-        include ./com/header
+        include ./com/index-header
 
-        .static_banner
-            img(src="./assets/image/bg_5.png")
+        .static_banner.swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    img(src="./assets/image/img1.png")
+                .swiper-slide
+                    img(src="./assets/image/img2.png")
+            .swiper-pagination
 
         section.container
 
         include ./com/footer
+        script(type="text/javascript",src="/assets/scripts/base/swiper.min.js")
         script(type="text/javascript",src="/assets/scripts/index.js")
