@@ -170,17 +170,6 @@
 
 })();
 
-
-
-
-
-
-
-
-
-
-
-
 function setNav(){
     var navArr = [{path:'company_info',pos:1},{path:'product',pos:2},{path:'company_news',pos:3},{path:'suggest',pos:4},{path:'contact',pos:5}];
     $('ul.nav a:eq(0)').addClass('active');
