@@ -1,0 +1,60 @@
+@import './app';
+@import './nav';
+
+
+.c_r_content
+  padding 34px 20px 0 20px
+  li
+    width 246px
+    height 190px
+    list-style none
+    float left
+    border 1px solid #E5E5E5
+    margin-bottom 40px
+    position relative
+    cursor pointer
+    a
+      display block
+      height 100%
+    .product_img
+      height 140px
+      F_center_h(140px)
+      margin-top 10px
+    .product_info
+      position absolute
+      bottom 0
+      padding 6px 0
+      background #6AB0EC
+      font-size 12px
+      color #ffffff
+      text-align center
+      F_ellipsis(100%)
+
+    &:nth-child(3n-1)
+      margin 0 25px
+
+
+.c_r_content.product_detail
+  padding 130px 40px
+  .p_img
+    position relative
+    width 350px
+    height 350px
+    padding 10px
+    border 1px solid #DBDBDB
+    img
+      F_center(300px,300px)
+  .p_info
+    margin-left 20px
+    .p_title
+      font-size 18px
+      color #E96161
+      display block
+      margin-bottom 30px
+    .p_filed
+      line-height 30px
+      font-size 14px
+
+#productList
+  border-bottom 1px solid #DCDCDC
+

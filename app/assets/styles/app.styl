@@ -14,6 +14,8 @@ footer .container,
 section.container
   width 1020px
   margin auto
+section.container
+  min-height 700px
 
 // header
 header
@@ -94,7 +96,7 @@ header
 
 //all icon
 .icon
-  background url("./../image/icons.png") no-repeat
+  background url("../image/icons.png") no-repeat
   background-size 100%
 
 //index_header
@@ -130,3 +132,75 @@ footer
   a
     display inline-block
     margin 0 20px
+
+//left_nav
+section.container .left_nav
+  margin-top 60px
+  border 1px solid lightgray;
+  text-align center
+  border-radius 15px
+  background #FFFFFF
+  overflow hidden
+  padding-bottom 30px
+  width 170px
+
+  li
+    padding 0 10px
+    a
+      padding 10px 10px
+      display block
+      position relative
+      border-bottom 1px dashed #333
+      font-size 14px
+    span
+      position absolute
+      left -10px
+      top 0
+      height 100%
+      width 2px
+      display block
+      background transparent
+    &.active
+      a
+        color #449CE6
+      span
+        background #449CE6
+    &:first-child
+      background #449CE6
+      padding 10px
+      color #FFFFFF
+      font-size 18px
+
+// 右内容
+section.container .c_right
+  width 830px
+  .c_r_content
+    border 1px solid #E5E5E5
+    background #FFFFFF
+    border-radius 15px
+    margin-bottom 100px
+
+//分页
+.pager
+  padding 10px
+  display inline-block
+  a
+    background url("../image/page_bg.png")
+    float left
+    width 32px
+    height 32px
+    background-size 100%
+    color #777777
+    font-size 13px
+    position relative
+    text-align center
+    line-height 32px
+    margin-left 15px
+    &.active
+      background url("../image/page_active.png")
+      color #FFFFFF
+    &.page_pre
+      background url("../image/pre.png")
+    &.page_next
+      background url("../image/next.png")
+
