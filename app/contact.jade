@@ -2,15 +2,33 @@ doctype html
 html(lang="en")
     head
         include ./com/meta
-        link(rel="stylesheet" ,href="/assets/styles/index.min.css")
+        link(rel="stylesheet" ,href="/assets/styles/contact.min.css")
         title 首页
     body
         include ./com/header
         .static_banner
-            img(src="./assets/image/bg_4.png")
+            img(src="./assets/image/bg_5.png")
         section.container
-            br
-            br
+            .c_nav
+                a(href="/") 首页
+                a >
+                a 联系我们
+
+            .content.clearfix
+                .address.fl
+                    img(src="http://api.map.baidu.com/staticimage?width=678&height=384&center=119.604511,31.729012&zoom=11")
+                ul.c_com_info.fl
+                    li
+                        img(src="./assets/image/img_detail_info.png")
+                    li.icon_tel
+                        a(href="tel:0519-2444935") 0519-2444935
+                        a(href="tel:0519-2443183") 0519-2443183
+                        a(href="tel:13706146935") 13706146935
+                    li.icon_emial
+                        a(href="mailto:jianyun1236@sohu.com") jianyun1236@sohu.com
+                    li.icon_adrs 江苏省常州金坛市直溪工业园区
+                    li.icon_per 剑云
+
 
         include ./com/footer
-        script(type="text/javascript",src="/assets/scripts/index.js")
+        //script(type="text/javascript",src="/assets/scripts/contact.js")
