@@ -10,7 +10,40 @@ html(lang="en")
         .static_banner
             img(src="./assets/image/bg_3.png")
 
-        section.container
+        section.container.clearfix
+            ul.left_nav.fl.box
+                li 公司新闻
+                li
+                    a 行业资讯
+                        span
+                li.active
+                    a 健康资讯
+                        span
+                li
+                    a 企业资讯
+                        span
+
+            .c_right.fr
+                .c_nav
+                    a 首页
+                    a >
+                    a 公司新闻
+                    a >
+                    a 健康资讯
+                .c_r_content.box
+                    ul.clearfix#newsList
+                        - var n = 1
+                        while n < 20
+                            li
+                                a(href="company_news_detail.html")
+                                    img.news_img(src="./assets/image/bg_1.png")
+                                    .news_title=(n++)+'标题'
+                                    .news_date 发布日期 2021-12-12 12：12
+                                    .news_desc 简介
+
+
+
+                    include ./com/page
 
         include ./com/footer
             

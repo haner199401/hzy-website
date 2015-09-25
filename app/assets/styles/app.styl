@@ -160,7 +160,7 @@ section.container .left_nav
       width 2px
       display block
       background transparent
-    &.active
+    &.active,&:hover
       a
         color #449CE6
       span
@@ -171,6 +171,8 @@ section.container .left_nav
       color #FFFFFF
       font-size 18px
 
+
+
 // 右内容
 section.container .c_right
   width 830px
@@ -179,6 +181,10 @@ section.container .c_right
     background #FFFFFF
     border-radius 15px
     margin-bottom 100px
+
+  .border_bottom
+    background url("../image/juchi.png") repeat-x
+    height 5px
 
 //分页
 .pager
@@ -203,4 +209,7 @@ section.container .c_right
       background url("../image/pre.png")
     &.page_next
       background url("../image/next.png")
+
+.box
+  box-shadow 0 0 10px rgb(189, 189, 189)
 
