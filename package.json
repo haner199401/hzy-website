@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
+    "start": "cnpm install&gulp",
     "deploy": "gulp release"
   },
   "repository": {
@@ -14,7 +14,7 @@
   "author": "Haner",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/haner199401/hzy-website/issues"
+    "url": "httpgulps://github.com/haner199401/hzy-website/issues"
   },
   "homepage": "https://github.com/haner199401/hzy-website#readme",
   "dependencies": {
