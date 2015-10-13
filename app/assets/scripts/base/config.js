@@ -8,42 +8,40 @@
  * 本地测试地址 http://192.168.1.152
  */
 
-var is8282Server = !!0;
+var isDeploy = !!0;
 
 var config = {
-	projectName: is8282Server ? '/wu-asset-appinterface':'',
+	projectName: '',
 	page: 1, //当前第几页，从1开始
-	pageSize: 10, //默认分页大小,
+	pageSize: 9, //默认分页大小,
 	totalPage: 0, //总页数,
 	pageRequest: undefined,
 	currentPage: 1,
-    baseUrl: is8282Server ? 'http://zcbdev.worldunion.com.cn:8282' : 'http://zcbdev.worldunion.com.cn:8383',
+    baseUrl:'http://192.168.2.10:8080',
     interfaceSuffix: '',
 	pageSuffix: '.html'
 };
 
 //server address
-config.server = config.baseUrl ? (config.baseUrl + config.projectName) : (location.protocol + '//' + location.host + config.projectName + '/');
-//config.server = 'http://10.0.16.60:8080//wu-asset-appinterface';
+config.server = isDeploy ? (location.protocol + '//' + location.host + config.projectName + '/') : config.baseUrl;
 
 //page address
 config.pageServer = location.protocol + '//' + location.host;
-//图片服务器地址
-config.imageServer = config.server + '/api/pictureapi' + config.interfaceSuffix;
+
 //接口根地址
 config.interfaceServer = config.server + '/api/';
+
 //load img
 config.loadMoreImg = '/assets/images/ajax-loader.gif';
 
-//文件存放地址
-config.IFileServer = config.interfaceServer + 'photoUpload';
 
 
 /**
  * Interface
  */
 
-config.ICityList = config.interfaceServer + 'project/getCityList';//城市列表
+config.INewsType = config.interfaceServer + 'newsType/list';//新闻分类
+config.INewsList = config.interfaceServer + 'news/list';//新闻列表
 
 
 /**
@@ -51,6 +49,7 @@ config.ICityList = config.interfaceServer + 'project/getCityList';//城市列表
  * @returns {*}
  */
 config.PIndex = createPageUrl('index');//首页
+config.PNewsDetail = createPageUrl('company_news_detail');//新闻详情
 
 
 /**

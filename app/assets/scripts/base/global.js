@@ -34,78 +34,56 @@ var Ajax = (function(){
 
         pageRequest: function (data, callback, callbackDone) {
             var renderFor = data.renderFor || 'wu-list-tmpl', renderEle = data.renderEle || '#wu-list',
-                clear = data.clear || 'true',
-                pageParam = {pageSize:config.pageSize,page:config.page};
-
-            var next = $('.wlist_next'), nextStr = '<a class="wlist_next">更多</a>';
-            if (next.length == 0) {
-                $(renderEle).after(nextStr);
-                next = $('.wlist_next');
-            }
-            if(config.page === 1 && clear === 'true'){
-                $(renderEle).html('');
-            }
-            next.show().addClass('wu_loading').text(config.tips.loading);
+                pageParam = {pageSize:config.pageSize,pageNumber:config.page};
 
             data.data = $.extend(pageParam,data.data);
-
+            log(data.data);
             requestPool.push('first requrse');
 
             $.ajax({
                 url: data.url,
-                data:{
-                    jsonData:JSON.stringify(data.data)
-                },
+                data:data.data,
                 type: data.type || 'GET',
                 dataType:'json',
                 cache:false,
                 beforeSend:showLoadingLayer,
                 headers:setHeader(data.data)
             }).then(function (response, textStatus, jqXHR) {
-
+                /**
+                 * 防止多次请求
+                 */
                 requestPool.shift();
                 if(requestPool.length>0)return;
 
-                next.removeClass('wu_loading');
-                if(!response || !response.code || response.code !== '0'){
-                    if(!response) {Tools.toast(config.tips.server);return;}
-                    if(!UserService.getToken()){
-                        next.text('登录后获取...');
-                        return;
-                    }
-                    next.text(config.tips.server);
-                    if(!response){Tools.toast(config.tips.server);return;}
-                    Tools.toast(response.desc || config.tips.server);return;
+                /**
+                 * 返回状态异常处理
+                 */
+                if(!response || !response.success){
+                    alert('Response Error');
                 }
-                var renderData = response.data[data.showlistkey] || response.data || [];
+                var renderData = response.result[data.showlistkey] || response.result || [];
 
                 log('Response： \n');
                 log(renderData);
 
+                /**
+                 * 数据渲染
+                 */
                 if ($('#' + renderFor).length) {
                     var result = template.render(renderFor, {
                         'list': renderData
                     });
-                    $(renderEle).append(result);
+                    $(renderEle).html(result);
                 }
 
-                if(renderData.length == 0){
-                    //数据没有结果显示无数据提示
-                    if(config.page == 0){
-                        next.html(config.tips.nodata);
-                    }else{
-                        next.html(config.tips.nomoredata);
-                    }
-                }else{
-                    if(renderData.length < config.pageSize){
-                        next.text(config.tips.nomoredata);
-                        next.addClass('wu_loading');
-                    }else{
-                        config.page += 1;
-                        next.text('更多');
-                    }
-                }
+                /**
+                 * 分页渲染
+                 */
 
+
+                /**
+                 * 回调执行
+                 */
                 if ($.isFunction(callback)) {
                     callback(response);
                 }
@@ -114,15 +92,8 @@ var Ajax = (function(){
                 if ($.isFunction(callbackDone)) {
                     callbackDone();
                 }
-                bindValid();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 log('[pageRequest] ' + textStatus + ':' + data.url);
-                next.removeClass('wu_loading');
-                if (textStatus === 'timeout') {
-                    next.text(config.tips.timeout);
-                } else {
-                    next.text(config.tips.server);
-                }
             }).always(function(res){
                 hideLoadingLayer();
             });
@@ -152,13 +123,13 @@ var Ajax = (function(){
                 beforeSend:showLoadingLayer,
                 headers:setHeader(data.data)
             }).then(function (response) {
-                if(!response || !response.code || response.code !== '0'){
+                if(!response || !response.success || response.success !== '0'){
                     if(!response) {Tools.toast(config.tips.server);return;}
                     Tools.toast(response.desc || config.tips.server);
                 }
 
                 if ($('#' + renderFor).length ) {
-                    var result = template.render(renderFor, response.data || {});
+                    var result = template.render(renderFor, response.result || {});
                     $(renderEle).html(result);
                 }
                 if ($.isFunction(callback)) {
@@ -223,11 +194,11 @@ var Ajax = (function(){
                     data.data.find('input[type="submit"],#submit_btn').removeAttr('disabled');
                 }
                 // 服务器无响应
-                if(!response || !response.code){
+                if(!response || !response.success){
                     Tools.toast(config.tips.server);return;
                 }
                 // 0 成功保存 其他则为失败，（重复提交时 状态码需要和005 区分开）
-                if(response.code !== '0'){
+                if(response.success !== '0'){
                     Tools.toast(response.desc || config.tips.server);return;
                 }
 
@@ -271,7 +242,7 @@ var Ajax = (function(){
          * @param callbackError-请求失败后执行的回调方法
          */
         custom: function (data, callback, callbackError) {
-            var renderFor = data.renderFor, renderEle = data.renderEle;
+            var renderFor = data.renderFor || 'wu-detail-tmpl', renderEle = data.renderEle || '#wu-detail';
 
             $.ajax({
                 url: data.url,
@@ -284,17 +255,28 @@ var Ajax = (function(){
                 headers:setHeader(data.data)
             }).then(function (response, textStatus, jqXHR) {
 
-                // error filter
-                if(!response || !response.code || (response.code !== '0' && response.code !== '001') ){
-                    if(!response) {Tools.toast(config.tips.server);return;}
-                    Tools.toast(response.desc || config.tips.server);
+                /**
+                 * 防止多次请求
+                 */
+                requestPool.shift();
+                if(requestPool.length>0)return;
+
+                /**
+                 * 返回状态异常处理
+                 */
+                if(!response || !response.success){
+                    alert('Response Error');
                 }
 
-                //data render
-                if ($('#' + renderFor).length) {
-                    var renderData = response.data[data.showlistkey] || response.data || [];
-                    log('Response \n\r' + JSON.stringify(renderData));
 
+                var renderData = response.result || [];
+                log('Response: \r');
+                log(renderData);
+
+                /**
+                 * 数据渲染
+                 */
+                if ($('#' + renderFor).length) {
                     var result = template.render(renderFor, {
                         'list': renderData || []
                     });
@@ -308,68 +290,6 @@ var Ajax = (function(){
 
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 log('[custom] ' + textStatus + ':' + data.url);
-                if (textStatus === 'timeout') {
-                    Tools.toast(config.tips.timeout);
-                } else {
-                    Tools.toast(config.tips.server);
-                }
-                if ($.isFunction(callbackError)) {
-                    callbackError();
-                }
-            }).always(function(){
-                hideLoadingLayer();
-                bindValid();
-            });
-        },
-        /**
-         * 获取系统字典数据
-         * @param data
-         * @param callback
-         * @param callbackError
-         */
-        getDictionary: function (data, callback, callbackError) {
-            var renderFor = data.renderFor, renderEle = data.renderEle;
-
-            $.ajax({
-                url: data.url,
-                data: {
-                    jsonData:JSON.stringify(data.data)
-                },
-                type:'GET',
-                dataType:'json',
-                beforeSend:showLoadingLayer
-            }).then(function (response, textStatus, jqXHR) {
-                bindValid();
-
-                if(!response || !response.code || response.code !== '0'){
-                    Tools.toast(response.desc || config.tips.server);
-                }
-
-                if ($('#' + renderFor).length) {
-                    try{
-                        var result = template.render(renderFor, {'list': response.data[0].values || []});
-                        $(renderEle).html(result);
-                    }catch (e){
-                        Tools.toast(response.desc || config.tips.server);
-                    }
-
-                }
-
-                if (typeof callback == 'function') {
-                    callback(response.data[0].values);
-                }
-
-
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                log('[getDictionary] ' + textStatus + ':' + data.url);
-                if (textStatus === 'timeout') {
-                    Tools.toast(config.tips.timeout);
-                } else {
-                    Tools.toast(config.tips.server);
-                }
-                if ($.isFunction(callbackError)) {
-                    callbackError();
-                }
             }).always(function(){
                 hideLoadingLayer();
             });
@@ -405,14 +325,11 @@ var Ajax = (function(){
      * @param p
      */
     function setHeader(p){
-        var auth  = Storage.get(Storage.AUTH) || {};
-        var temp = Storage.get(Storage.AUTH) || {};
-        var data = sort($.extend(auth,p));
-        return $.extend(temp,{sign:$.md5(data)});
+        //var auth  = Storage.get(Storage.AUTH) || {};
+        //var temp = Storage.get(Storage.AUTH) || {};
+        //var data = sort($.extend(auth,p));
+        //return $.extend(temp,{sign:$.md5(data)});
     }
-
-    // load layer id
-    config.loadLayerId = 'WU.LOAD.KEY';
 
     /**
      * 处理授权页面，登录框
@@ -432,11 +349,6 @@ var Ajax = (function(){
         // hide
     }
 
-    function bindValid(){
-        $('[data-rule="number_"]').isNumber_();
-        $('[data-rule="number"]').isNumber();
-        $('[data-rule="idcard"]').isIDCard();
-    }
 
 })();
 
@@ -697,36 +609,6 @@ var Storage = (function() {
         }
     };
 })();
-
-//User service
-var UserService = {
-    getUser:function(){
-        return Storage.get(Storage.ACCOUNT) || {};
-    },
-    getUserId:function(){
-        return this.getUser().id || '';
-    },
-    getToken:function(){
-        try{
-            return Storage.get(Storage.AUTH).token || Storage.get(Storage.ACCOUNT).token
-        }catch (e){
-            log(e);
-            return undefined
-        }
-    },
-    removeUser:function(){
-        Storage.remove(Storage.AUTH);
-        Storage.remove(Storage.ACCOUNT);
-        Storage.remove(Storage.CITY);
-    },
-    saveUser:function(user){
-        Storage.set(Storage.ACCOUNT, $.extend(this.getUser(),user || {}));
-    },
-    setCity:function(city){
-        var s = Storage.get(Storage.CITY) || {};
-        Storage.set(Storage.CITY, $.extend(s,city));
-    }
-};
 
 // 扩展Date的format方法
 Date.prototype.format = function (format) {

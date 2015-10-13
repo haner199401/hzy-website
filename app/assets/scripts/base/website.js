@@ -17,10 +17,6 @@
 		}
 	});
 
-	// 模板帮助方法，验证是否已登录
-	template.helper('$isLogin', function() {
-		return !!config.getId();
-	});
 
 	// 模板帮助方法，转换房源你的标签
 	template.helper('$convertTag', function(content) {
@@ -100,33 +96,6 @@
         }
     });
 
-    //模板帮助方法，格式化货币
-    template.helper('$calcMoney', function(money,type) {
-        if (!money) {
-            return '';
-        }
-        var result = new Number(money/10000);
-        if(type == 1){
-            return result.toFixed(1);
-        }
-        return money;
-    });
-
-	//模板帮助方法，\r\n替换换行
-	template.helper('$convertRN', function(content) {
-		if (!content) {
-			return '--';
-		}
-		return content.replace(/\r\n/gi, '<br/>');
-	});
-
-	//模板帮助方法，根据序列值添加样式名
-	template.helper('$addClassByIdx', function(i, v, className) {
-		if (i == v) {
-			return className || '';
-		}
-	});
-
 	//模板帮助方法，度量房源标题长度
 	template.helper('$lengthHouseTitle', function(content) {
 		var screenWidth = screen.width;
@@ -141,28 +110,6 @@
 
 		return content.substring(0, size) + '...';
 	});
-
-    //模板帮助方法，数字省略位数
-    template.helper('$number2Fixed', function(num,digit,def) {
-        //数字转换异常
-        try{
-            return (num ? new Number(num).toFixed(digit || 1) : (def || 0));
-        }catch (e){
-            return def || 0;
-        }
-    });
-
-    //模板帮助方法，数字省略位数
-    template.helper('$number2Fixed2', function(num,digit,def) {
-        //数字转换异常
-        if(!num){return ''}
-        num +='';
-        try{
-            return num.substr(num.indexOf('.') + 1).length > 2 ? parseFloat(num,10).toFixed(digit || 1) : num;
-        }catch (e){
-            return def || 0;
-        }
-    });
 
     //导航设置
     setNav();

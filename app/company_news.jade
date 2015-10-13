@@ -11,17 +11,17 @@ html(lang="en")
             img(src="./assets/image/bg_3.png")
 
         section.container.clearfix
-            ul.left_nav.fl.box
+            ul.left_nav.fl.box#wu-detail
                 li 公司新闻
-                li
-                    a 行业资讯
-                        span
-                li.active
-                    a 健康资讯
-                        span
-                li
-                    a 企业资讯
-                        span
+                //li
+                //    a 行业资讯
+                //        span
+                //li.active
+                //    a 健康资讯
+                //        span
+                //li
+                //    a 企业资讯
+                //        span
 
             .c_right.fr
                 .c_nav
@@ -32,19 +32,34 @@ html(lang="en")
                     a 健康资讯
                 .c_r_content.box
                     ul.clearfix#newsList
-                        - var n = 1
-                        while n < 20
-                            li
-                                a(href="company_news_detail.html")
-                                    img.news_img(src="./assets/image/bg_1.png")
-                                    .news_title=(n++)+'标题'
-                                    .news_date 发布日期 2021-12-12 12：12
-                                    .news_desc 简介
+                        //- var n = 1
+                        //while n < 20
+                        //    li
+                        //        a(href="company_news_detail.html")
+                        //            img.news_img(src="./assets/image/bg_1.png")
+                        //            .news_title=(n++)+'标题'
+                        //            .news_date 发布日期 2021-12-12 12：12
+                        //            .news_desc 简介
 
 
 
                     include ./com/page
 
         include ./com/footer
-            
-        script(type="text/javascript",src="/assets/scripts/index.js")
+        script(type="text/javascript",src="/assets/scripts/news.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <li>公司新闻</li>
+            <li class="active"><a href="javascript:void(0)" data-type="">全部分类<span></span></a></li>
+            <!--[for(i=0;i<list.length;i++){]-->
+                <li><a href="javascript:void(0)" data-type="<!--[=list[i].id || '']-->"><!--[=list[i].name || '']--><span></span></a></li>
+            <!--[}]-->
+
+        script(type="text/html",id="wu-list-tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li><a href="company_news_detail.html">
+                <img src="<!--[=list[i].img]-->" class="news_img">
+                <div class="news_title"><!--[=list[i].name]--></div>
+                <div class="news_date">发布日期 <!--[=$formatDate(list[i].created)]--></div>
+                <div class="news_desc"><!--[=list[i].desc || '暂无简介']--></div></a>
+            </li>
+            <!--[}]-->
