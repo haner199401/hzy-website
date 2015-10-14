@@ -211,16 +211,9 @@ var Ajax = (function(){
             } else {
                 formData = data.data;
             }
-
-            if(UserService.getUserId()){
-                formData.userId = UserService.getUserId();
-            }
-
             $.ajax({
                 url: data.url,
-                data: {
-                    jsonData:JSON.stringify(formData)
-                },
+                data:formData,
                 type: data.type || 'POST',
                 dataType:'json',
                 beforeSend:showLoadingLayer,
@@ -230,12 +223,8 @@ var Ajax = (function(){
                     data.data.find('input[type="submit"],#submit_btn').removeAttr('disabled');
                 }
                 // 服务器无响应
-                if(!response || !response.success){
-                    Tools.toast(config.tips.server);return;
-                }
-                // 0 成功保存 其他则为失败，（重复提交时 状态码需要和005 区分开）
-                if(response.success !== '0'){
-                    Tools.toast(response.desc || config.tips.server);return;
+                if(!response){
+                    return;
                 }
 
                 if ($.isFunction(callback)) {
@@ -248,20 +237,19 @@ var Ajax = (function(){
                 if ($.isFunction(callbackDone)) {
                     callbackDone();
                 }
-                bindValid();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 log('[submitForm] ' + textStatus + ':' + data.url);
                 if (isForm) {
                     data.data.find('input[type="submit"],#submit_btn').removeAttr('disabled');
                 }
-                if (textStatus === 'timeout') {
-                    Tools.toast(config.tips.timeout);
-                } else {
-                    Tools.toast(config.tips.server);
-                }
-                if ($.isFunction(callbackError)) {
-                    callbackError();
-                }
+                //if (textStatus === 'timeout') {
+                //    Tools.toast(config.tips.timeout);
+                //} else {
+                //    Tools.toast(config.tips.server);
+                //}
+                //if ($.isFunction(callbackError)) {
+                //    callbackError();
+                //}
             }).always(function(){
                 log('always.....');
                 if (isForm) {

@@ -43,6 +43,7 @@ config.loadMoreImg = '/assets/images/ajax-loader.gif';
 config.INewsType = config.interfaceServer + 'newsType/list';//新闻分类
 config.INewsList = config.interfaceServer + 'news/list';//新闻列表
 config.INewsDetail = config.interfaceServer + 'news/detail';//新闻详情
+config.ISaveSuggest = config.interfaceServer + 'message/sub';//保存留言
 
 
 /**

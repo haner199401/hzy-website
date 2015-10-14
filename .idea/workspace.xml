@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5476a4b-f8b8-49d8-a57b-4f482e89fac1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/scripts/news.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/app.styl" afterPath="$PROJECT_DIR$/app/assets/styles/app.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company_news.jade" afterPath="$PROJECT_DIR$/app/company_news.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company_news_detail.jade" afterPath="$PROJECT_DIR$/app/company_news_detail.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/scripts/suggest.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/scripts/base/config.js" afterPath="$PROJECT_DIR$/app/assets/scripts/base/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/scripts/base/global.js" afterPath="$PROJECT_DIR$/app/assets/scripts/base/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/news.styl" afterPath="$PROJECT_DIR$/app/assets/styles/news.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/com/page.jade" afterPath="$PROJECT_DIR$/app/com/page.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/suggest.jade" afterPath="$PROJECT_DIR$/app/suggest.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/suggest.styl" afterPath="$PROJECT_DIR$/app/assets/styles/suggest.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/common/utils.styl" afterPath="$PROJECT_DIR$/app/assets/styles/common/utils.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hzy-website.iws" />
@@ -38,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Jade File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -70,16 +63,17 @@
         <option value="$PROJECT_DIR$/app/assets/styles/app.styl" />
         <option value="$PROJECT_DIR$/app/assets/styles/common/utils.styl" />
         <option value="$PROJECT_DIR$/app/assets/styles/suggest.styl" />
-        <option value="$PROJECT_DIR$/app/suggest.jade" />
         <option value="$PROJECT_DIR$/app/index.jade" />
         <option value="$PROJECT_DIR$/app/company_news_detail.jade" />
         <option value="$PROJECT_DIR$/app/assets/scripts/news-detail.js" />
         <option value="$PROJECT_DIR$/app/assets/styles/news.styl" />
-        <option value="$PROJECT_DIR$/app/assets/scripts/base/config.js" />
-        <option value="$PROJECT_DIR$/app/assets/scripts/base/global.js" />
         <option value="$PROJECT_DIR$/app/com/page.jade" />
         <option value="$PROJECT_DIR$/app/company_news.jade" />
         <option value="$PROJECT_DIR$/app/assets/scripts/news.js" />
+        <option value="$PROJECT_DIR$/app/assets/scripts/base/config.js" />
+        <option value="$PROJECT_DIR$/app/suggest.jade" />
+        <option value="$PROJECT_DIR$/app/assets/scripts/suggest.js" />
+        <option value="$PROJECT_DIR$/app/assets/scripts/base/global.js" />
       </list>
     </option>
   </component>
@@ -198,6 +192,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hzy-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hzy-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hzy-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hzy-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,13 +375,20 @@
       <option name="project" value="LOCAL" />
       <updated>1444743170115</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新闻模块完成">
+      <created>1444842567646</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1444842567646</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5194085" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.455335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -363,7 +404,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -410,7 +450,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="move project" />
     <MESSAGE value="add news data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add news data" />
+    <MESSAGE value="新闻模块完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="新闻模块完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/suggest.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32617188">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/image/box.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -731,22 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/scripts/news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2548638">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/scripts/base/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3277635">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/company_news.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2506427">
@@ -755,13 +773,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/scripts/base/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43943298">
+          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/scripts/base/global.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27763495">
-          <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.5064433">
+          <caret line="231" column="17" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
           <folding>
-            <marker date="1444841365000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444844253000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/scripts/news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15463917">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/suggest.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6765464">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/scripts/suggest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23195876">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -24,24 +24,24 @@ html(lang="en")
                     a >
                     a 我要留言
                 .c_r_content
-                    form
+                    form#suggest_form
                         .input_group
                             label 姓名：
-                            input(type="text")
+                            input(type="text",name="name")
                         .input_group
                             label 电话：
-                            input(type="text")
+                            input(type="text",name="phone")
                         .input_group
                             label 邮箱：
-                            input(type="text")
+                            input(type="text",name="mail")
                         .input_group
                             label 留言主题：
-                            input(type="text")
+                            input(type="text",name="title")
                         .input_group.textarea
                             label 留言内容：
-                            textarea
+                            textarea(name="text")
                         .center_button
                             input(type="reset",value="清空充填")
                             input(type="submit",value="提交留言")
         include ./com/footer
-        script(type="text/javascript",src="/assets/scripts/index.js")
+        script(type="text/javascript",src="/assets/scripts/suggest.js")
