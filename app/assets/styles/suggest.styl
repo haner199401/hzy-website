@@ -1,3 +1,38 @@
 @import './app';
 @import './nav';
 
+.c_r_content
+  padding 20px
+
+form
+  .input_group
+    height 34px
+    margin-bottom 20px
+    label
+      width 100px
+      display inline-block
+    input,textarea
+      background-color #EFEFEF
+      border none
+      height 100%
+      width 262px
+      resize none
+  .input_group.textarea
+    height 185px
+    border-bottom 1px dashed
+    padding-bottom 20px
+    label
+      vertical-align top
+    textarea
+      width 80%
+  .center_button
+    text-align center
+    input
+      F_borderRadius(5px)
+      border none
+      width 166px
+      padding 10px 0
+      color #FFFFFF
+      &:last-child
+        background #47CA88
+        margin-left 20px

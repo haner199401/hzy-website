@@ -11,6 +11,25 @@ var DialogType = {
     tip: 'tip'
 };
 
+/**
+ *
+ * @param viewedIndex 默认显示几个角码
+ * @param currentPage 当前页
+ * @param totalPage 总页数
+ * @returns {{firstIndex: number, lastIndex: number}}
+ */
+function getPageIndex(viewedIndex, currentPage, totalPage) {
+    if (totalPage <= viewedIndex) {
+        return {firstIndex: 1, lastIndex: totalPage}
+    }
+    var firstIndex = Math.ceil((currentPage <= viewedIndex / 2 + 1 ? 1 : (currentPage - viewedIndex / 2)));
+    var lastIndex = Math.ceil((firstIndex + viewedIndex - 1 >= totalPage ? totalPage : firstIndex + viewedIndex - 1));
+    if (lastIndex >= totalPage)
+        firstIndex = lastIndex - viewedIndex + 1;
+    return {firstIndex: firstIndex, lastIndex: lastIndex}
+}
+
+
 // Ajax Tools
 var Ajax = (function(){
 
@@ -34,11 +53,12 @@ var Ajax = (function(){
 
         pageRequest: function (data, callback, callbackDone) {
             var renderFor = data.renderFor || 'wu-list-tmpl', renderEle = data.renderEle || '#wu-list',
-                pageParam = {pageSize:config.pageSize,pageNumber:config.page};
+                pageParam = {pageSize:config.pageSize,pageNumber:config.page},
+                pageFor = data.pageFor || 'page-tmpl',
+                pageEle = data.pageEle || '#page';
 
             data.data = $.extend(pageParam,data.data);
-            log(data.data);
-            requestPool.push('first requrse');
+            requestPool.push('first request');
 
             $.ajax({
                 url: data.url,
@@ -61,7 +81,7 @@ var Ajax = (function(){
                 if(!response || !response.success){
                     alert('Response Error');
                 }
-                var renderData = response.result[data.showlistkey] || response.result || [];
+                var renderData = response.data[data.showlistkey] || response.data || [];
 
                 log('Response： \n');
                 log(renderData);
@@ -76,9 +96,26 @@ var Ajax = (function(){
                     $(renderEle).html(result);
                 }
 
-                /**
-                 * 分页渲染
-                 */
+                //页码渲染
+                if ($('#' + pageFor).length && response.info.page.countData) {
+
+                    var o = {cPage: 0, pageStart: 0, pageEnd: 0, totalPage: 0};
+                    //计算页数
+                    o.totalPage = config.totalPage = parseInt(((parseInt(response.info.page.countData) || 0) + config.pageSize - 1) / config.pageSize) || 0;
+                    //设置当前页
+                    o.cPage = parseInt(config.currentPage) || 1;
+                    //计算省略页码
+                    o.pageIndex = getPageIndex(5, o.cPage, o.totalPage);
+
+                    var html = template.render(pageFor, {
+                        totalPage: o.totalPage,
+                        pageStart: o.pageIndex.firstIndex,
+                        pageEnd: o.pageIndex.lastIndex,
+                        cPage: o.cPage,
+                        pageSize: config.pageSize
+                    });
+                    $(pageEle).html(html);
+                }
 
 
                 /**
@@ -129,7 +166,7 @@ var Ajax = (function(){
                 }
 
                 if ($('#' + renderFor).length ) {
-                    var result = template.render(renderFor, response.result || {});
+                    var result = template.render(renderFor, response.data || {});
                     $(renderEle).html(result);
                 }
                 if ($.isFunction(callback)) {
@@ -140,7 +177,6 @@ var Ajax = (function(){
                 if ($.isFunction(callbackDone)) {
                     callbackDone();
                 }
-                bindValid();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 log('[queryRecord] ' + textStatus + ':' + data.url);
                 if (textStatus === 'timeout') {
@@ -269,7 +305,7 @@ var Ajax = (function(){
                 }
 
 
-                var renderData = response.result || [];
+                var renderData = response.data || [];
                 log('Response: \r');
                 log(renderData);
 

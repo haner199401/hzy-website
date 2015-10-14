@@ -2,12 +2,36 @@
    Created by haner on 15/9/21.
 
 .t_c
-    .pager.clearfix
-        a.page_pre(href="#")
-        a.active 0
-        - var n = 1
-        while n < 5
-            a(href="#")
-                span=n++
-        a ...
-        a.page_next(href="#")
+    .pager.clearfix#page
+script(type="text/html",id="page-tmpl").
+    <!--[if(totalPage!=0){]-->
+        <!--[if(cPage > 1){]-->
+            <a href="#" class="pre page_pre"></a>
+        <!--[}]-->
+
+        <!--[if(pageStart != 1){]-->
+            <a data-page-num="<!--[=i]-->">1</a>
+            <!--[if(pageStart-1 != 1){]-->
+                <a>...</a>
+            <!--[}]-->
+        <!--[}]-->
+
+        <!--[for(i=pageStart;i<=pageEnd;i++){]-->
+            <!--[if(i==cPage){]-->
+            <a class="active"><!--[=i]--></a>
+            <!--[}else{]-->
+            <a data-page-num="<!--[=i]-->"><!--[=i]--></a>
+            <!--[}]-->
+        <!--[}]-->
+
+        <!--[if(pageEnd!=totalPage){]-->
+            <!--[if(totalPage-pageEnd != 1){]-->
+                <a>...</a>
+            <!--[}]-->
+            <a data-page-num="<!--[=totalPage]-->"><!--[=totalPage]--></a>
+        <!--[}]-->
+
+        <!--[if(cPage<totalPage){]-->
+            <a class="next page_next">下一页</a>
+        <!--[}]-->
+    <!--[}]-->

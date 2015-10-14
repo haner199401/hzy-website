@@ -3,7 +3,7 @@ html(lang="en")
     head
         include ./com/meta
         link(rel="stylesheet" ,href="/assets/styles/suggest.min.css")
-        title 首页
+        title 留言
     body
         include ./com/header
 
@@ -11,7 +11,37 @@ html(lang="en")
             img(src="./assets/image/bg_4.png")
 
         section.container
-            br
-
+            ul.left_nav.fl
+                li 客户留言
+                li.active
+                    a 我要留言
+                        span
+            .c_right.fr
+                .c_nav
+                    a 首页
+                    a >
+                    a 客户留言
+                    a >
+                    a 我要留言
+                .c_r_content
+                    form
+                        .input_group
+                            label 姓名：
+                            input(type="text")
+                        .input_group
+                            label 电话：
+                            input(type="text")
+                        .input_group
+                            label 邮箱：
+                            input(type="text")
+                        .input_group
+                            label 留言主题：
+                            input(type="text")
+                        .input_group.textarea
+                            label 留言内容：
+                            textarea
+                        .center_button
+                            input(type="reset",value="清空充填")
+                            input(type="submit",value="提交留言")
         include ./com/footer
         script(type="text/javascript",src="/assets/scripts/index.js")

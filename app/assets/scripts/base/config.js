@@ -17,7 +17,7 @@ var config = {
 	totalPage: 0, //总页数,
 	pageRequest: undefined,
 	currentPage: 1,
-    baseUrl:'http://192.168.2.10:8080',
+    baseUrl:'http://localhost:8080',
     interfaceSuffix: '',
 	pageSuffix: '.html'
 };
@@ -42,6 +42,7 @@ config.loadMoreImg = '/assets/images/ajax-loader.gif';
 
 config.INewsType = config.interfaceServer + 'newsType/list';//新闻分类
 config.INewsList = config.interfaceServer + 'news/list';//新闻列表
+config.INewsDetail = config.interfaceServer + 'news/detail';//新闻详情
 
 
 /**
@@ -49,6 +50,7 @@ config.INewsList = config.interfaceServer + 'news/list';//新闻列表
  * @returns {*}
  */
 config.PIndex = createPageUrl('index');//首页
+config.PNewsList = createPageUrl('company_news');//新闻列表
 config.PNewsDetail = createPageUrl('company_news_detail');//新闻详情
 
 
