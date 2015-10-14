@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5476a4b-f8b8-49d8-a57b-4f482e89fac1" name="Default" comment="客户建议完成">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/scripts/company.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/app.styl" afterPath="$PROJECT_DIR$/app/assets/styles/app.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company_info.jade" afterPath="$PROJECT_DIR$/app/company_info.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/com/footer.jade" afterPath="$PROJECT_DIR$/app/com/footer.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/info.styl" afterPath="$PROJECT_DIR$/app/assets/styles/info.styl" />
+    <list default="true" id="a5476a4b-f8b8-49d8-a57b-4f482e89fac1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/image/box.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/image/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/com/meta.jade" afterPath="$PROJECT_DIR$/app/com/meta.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/suggest.jade" afterPath="$PROJECT_DIR$/app/suggest.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/styles/suggest.styl" afterPath="$PROJECT_DIR$/app/assets/styles/suggest.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hzy-website.iws" />
@@ -27,28 +27,7 @@
     <favorites_list name="hzy-website" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="header.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/com/header.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.styl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/styles/app.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3556701">
-              <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -81,8 +60,6 @@
         <option value="$PROJECT_DIR$/dest/assets/scripts/base/global.js" />
         <option value="$PROJECT_DIR$/app/assets/scripts/base/website.js" />
         <option value="$PROJECT_DIR$/app/assets/styles/common/utils.styl" />
-        <option value="$PROJECT_DIR$/app/assets/styles/suggest.styl" />
-        <option value="$PROJECT_DIR$/app/index.jade" />
         <option value="$PROJECT_DIR$/app/company_news_detail.jade" />
         <option value="$PROJECT_DIR$/app/assets/scripts/news-detail.js" />
         <option value="$PROJECT_DIR$/app/assets/styles/news.styl" />
@@ -90,7 +67,6 @@
         <option value="$PROJECT_DIR$/app/company_news.jade" />
         <option value="$PROJECT_DIR$/app/assets/scripts/news.js" />
         <option value="$PROJECT_DIR$/app/assets/scripts/base/config.js" />
-        <option value="$PROJECT_DIR$/app/suggest.jade" />
         <option value="$PROJECT_DIR$/app/assets/scripts/suggest.js" />
         <option value="$PROJECT_DIR$/app/assets/scripts/base/global.js" />
         <option value="$PROJECT_DIR$/app/assets/scripts/company.js" />
@@ -98,6 +74,10 @@
         <option value="$PROJECT_DIR$/app/company_info.jade" />
         <option value="$PROJECT_DIR$/app/com/footer.jade" />
         <option value="$PROJECT_DIR$/app/assets/styles/app.styl" />
+        <option value="$PROJECT_DIR$/app/suggest.jade" />
+        <option value="$PROJECT_DIR$/app/assets/styles/suggest.styl" />
+        <option value="$PROJECT_DIR$/app/index.jade" />
+        <option value="$PROJECT_DIR$/app/com/meta.jade" />
       </list>
     </option>
   </component>
@@ -254,10 +234,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -277,25 +253,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hzy-website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hzy-website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="image" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,12 +274,13 @@
     <property name="js.buildTools.gulp.gulp_package_dir" value="/usr/local/lib/node_modules/gulp" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/haner/Desktop/WebstormProjects/hzy-website/app/index.jade" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/image" />
       <recent name="$PROJECT_DIR$/app/assets/scripts" />
       <recent name="$PROJECT_DIR$/app/assets/styles" />
-      <recent name="$PROJECT_DIR$/app/assets/image" />
       <recent name="$PROJECT_DIR$/app/com" />
       <recent name="$PROJECT_DIR$/app/assets/scripts/base" />
     </key>
@@ -451,12 +410,18 @@
       <option name="project" value="LOCAL" />
       <updated>1444844327772</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="公司文化，风采完成&#10;搜索隐藏  header_search">
+      <created>1444845509766</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1444845509766</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5194085" order="3" side_tool="true" content_ui="tabs" />
@@ -465,8 +430,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18675123" sideWeight="0.4805915" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754344" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -522,7 +487,8 @@
     <MESSAGE value="add news data" />
     <MESSAGE value="新闻模块完成" />
     <MESSAGE value="客户建议完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="客户建议完成" />
+    <MESSAGE value="公司文化，风采完成&#10;搜索隐藏  header_search" />
+    <option name="LAST_COMMIT_MESSAGE" value="公司文化，风采完成&#10;搜索隐藏  header_search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -531,18 +497,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/image/juchi.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/image/ajax-loader.gif">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -584,11 +538,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/image/icons.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/com/index-header.jade">
@@ -729,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/styles/suggest.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70703125">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dest/assets/styles/suggest.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52734375">
@@ -760,14 +702,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/image/box.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3470437">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/company_news_detail.jade">
@@ -820,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/suggest.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6765464">
-          <caret line="35" column="56" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/scripts/suggest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23195876">
@@ -862,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/company_info.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14948453">
-          <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/scripts/news.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13530928">
@@ -878,18 +796,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/com/header.jade">
+    <entry file="file://$PROJECT_DIR$/app/assets/styles/app.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.41365978">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/styles/app.styl">
+    <entry file="file://$PROJECT_DIR$/app/suggest.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3556701">
-          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.36726806">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/styles/suggest.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.077319585">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/image/icons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/com/header.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/image/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/com/meta.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.058479533">
+          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/company_info.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.116959065">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0877193">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding />
         </state>
       </provider>
