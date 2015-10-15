@@ -6,3 +6,114 @@
   height 400px
   .swiper-pagination-bullet-active
     background #4589EA
+.product_area
+  background-color #FFFFFF
+  padding 30px
+  box-shadow 0 0 15px 5px rgba(51, 51, 51, 0.22)
+  .p_top
+    padding-bottom 20px
+    width 790px
+    margin auto
+    span
+      font-size 20px
+      color #3C96D4
+    a
+      font-size 13px
+      &:hover
+        text-decoration underline
+
+//productdetail
+.product_list
+  width 790px
+.product_detail
+  width 246px
+  height 190px
+  border 1px solid #E5E5E5
+  position relative
+  cursor pointer
+  a
+    display block
+    height 100%
+  .product_img
+    height 140px
+    F_center_h(140px)
+    margin-top 10px
+  .product_info
+    position absolute
+    bottom 0
+    padding 6px 0
+    background #6AB0EC
+    font-size 12px
+    color #ffffff
+    text-align center
+    F_ellipsis(100%)
+
+section.container
+  min-height 510px
+
+section.container div
+  float left
+  margin 30px 0
+  background #FFFFFF
+  border-radius 10px
+  box-shadow 0 0 15px 5px rgba(51, 51, 51, 0.22)
+  width 330px
+  padding 20px
+  height: 410px;
+  min-height: 410px;
+  .see_all
+    display block
+    border-top 1px solid #d3d3d3
+    padding-top 20px
+    margin-top 15px
+    text-align center
+    font-size 17px
+    color #656565
+
+section.container div.news_info
+  margin 30px 15px
+
+.c_com_info li
+  background-size 40px
+  background-repeat no-repeat
+  padding 20px 0 20px 50px
+  background-position 0 11px
+  a
+    display block
+
+.com_info p
+  text-indent: 25px;
+  line-height: 25px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 34px;
+  a:hover
+    text-decoration underline
+
+#newsList
+  font-size 14px
+  li
+    border-top: 1px dotted;
+    padding-top: 25px;
+    padding-bottom: 4px;
+
+    &:first-child
+      border-top transparent
+    a
+      F_ellipsis(70%)
+      display inline-block
+      position relative
+      padding-left 17px
+      &:hover
+        text-decoration underline
+      &::after
+        content ""
+        display block
+        F_center_v(14px)
+        left 0
+        width 14px
+        background url("../image/icons_11.png") no-repeat center
+    .time
+      font-size 12px
+      color #CBCBCB
+

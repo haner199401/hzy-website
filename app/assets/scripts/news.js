@@ -13,6 +13,7 @@
         $('#wu-detail li').removeClass('active');
         $(this).parent().addClass('active');
         $('.nav_show').text($(this).text());
+        config.page = 1;
         config.pageRequest();
     });
 

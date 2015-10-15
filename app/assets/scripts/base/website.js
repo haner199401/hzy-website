@@ -114,6 +114,26 @@
     //导航设置
     setNav();
 
+    var body = $('body');
+    //分页点击
+    body.on('click', '.pager a[data-page-num]', function () {
+        if (typeof config.pageRequest == 'function') {
+            console.log($(this).attr('data-page-num'));
+            config.currentPage = config.page = $(this).attr('data-page-num');
+            config.pageRequest();
+        }
+    });
+
+    //上一页,下一页
+    body.on('click', '.pager .pre,.pager .next', function () {
+        if (typeof config.pageRequest == 'function') {
+            var cPage = parseInt($(this).siblings('.active').text()) || 1;
+            $(this).is($('.pager .pre')) ? cPage -= 1 : cPage += 1;
+            config.currentPage = config.page = cPage < 1 ? 1 : cPage;
+            config.pageRequest();
+        }
+    });
+
 
 })();
 
