@@ -20,39 +20,7 @@ html(lang="en")
                 span 最新产品
                 a.fr(href="product.html") 更多 》
             .product_list.swiper-container
-                .swiper-wrapper
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdadw
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdwa
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdadw
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdwa
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdadw
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdwa
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdadw
-                    .swiper-slide.product_detail
-                        a(href="#")
-                            img.product_img(src="./assets/image/bg_1.png")
-                            .product_info awdwa
+                .swiper-wrapper#product_area
                 .swiper-button-next
                 .swiper-button-prev
 
@@ -76,23 +44,6 @@ html(lang="en")
             .news_info
                 img(src="./assets/image/index_news.png")
                 ul#newsList
-                    li
-                        a(href="#") 哈啊啊啊积极地将开始交电费卡
-                        span.time 2015-12-12
-                    li
-                        a(href="#") 哈啊啊啊积极地将开始交电费卡
-                        span.time 2015-12-12
-                    li
-                        a(href="#") 哈啊啊啊积极地将开始交电费卡
-                        span.time 2015-12-12
-                    li
-                        a(href="#") 哈啊啊啊积极地将开始交电费卡
-                        span.time 2015-12-12
-                    li
-                        a(href="#") 哈啊啊啊积极地将开始交电费卡
-                        span.time 2015-12-12
-
-
                 a.see_all(href="company_news.html") 查看全部
             .ours_info
                 img(src="./assets/image/index_contact.png")
@@ -102,10 +53,21 @@ html(lang="en")
                         a(href="tel:0519-2443183") 0519-2443183
                         a(href="tel:13706146935") 13706146935
                     li.icon_emial
-                        a(href="mailto:jianyun1236@sohu.com") jianyun1236@sohu.com
+                        a(href="mailto:jyyl10@163.com") jyyl10@163.com
                     li.icon_adrs 江苏省常州金坛市直溪工业园区
-                    li.icon_per 剑云
+                    li.icon_per 剑云医疗器械
 
         include ./com/footer
         script(type="text/javascript",src="/assets/scripts/base/swiper.min.js")
         script(type="text/javascript",src="/assets/scripts/index.js")
+        script(type="text/html",id="product_tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+                <div class="swiper-slide product_detail" >
+                    <a href="product.html?id=<!--[=list[i].id]-->"><img src="<!--[=$absImg(list[i].img)]-->" class="product_img"><div class="product_info"><!--[=list[i].name]--></div></a>
+                </div>
+            <!--[}]-->
+
+        script(type="text/html",id="newslist_tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+                <li><a href="company_news.html?id=<!--[=list[i].id]-->"><!--[=list[i].name]--></a><span class="time"><!--[=$formatDate(list[i].created,6)]--></span></li>
+            <!--[}]-->

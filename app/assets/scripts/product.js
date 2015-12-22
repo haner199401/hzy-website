@@ -24,8 +24,8 @@
         $('.newsDetailArea').hide();
         $('.newsListArea').show();
         Ajax.pageRequest({
-            url: config.INewsList,
-            renderEle: '#newsList',
+            url: config.IProductList,
+            renderEle: '#productList',
             data: {
                 typeId: $('#wu-detail li.active a').attr('data-type')
             }
@@ -33,12 +33,11 @@
     };
 
 
-
     /**
      * 获取新闻分类
      */
     Ajax.custom({
-        url: config.INewsType
+        url: config.IProductType
     });
 
 
@@ -46,7 +45,7 @@
      * 查看新闻详情
      */
     var id = location.href.getQueryValue('id');
-    body.on('click', '#newsList a[data-id]', function(){
+    body.on('click', '#productList a[data-id]', function(){
         id = null;
         getNewsDetail($(this));
     });
@@ -55,7 +54,7 @@
 
     function getNewsDetail(_this) {
         Ajax.queryRecord({
-            url: config.INewsDetail + '?id=' + (id || _this.attr('data-id')),
+            url: config.IProductDetail + (id || _this.attr('data-id')),
             renderFor:'news_detail_tmpl',
             renderEle:'#news_detail'
         }, function (res) {

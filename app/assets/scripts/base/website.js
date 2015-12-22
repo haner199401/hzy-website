@@ -5,7 +5,7 @@
 
 	// 模板帮助方法，绝对化图片地址
 	template.helper('$absImg', function(content) {
-		return content;
+		return config.server + content;
 	});
 
 	// 模板帮助方法，转换时间戳成字符串

@@ -17,7 +17,7 @@ var config = {
 	totalPage: 0, //总页数,
 	pageRequest: undefined,
 	currentPage: 1,
-    baseUrl:'http://localhost:8080',
+    baseUrl:'http://localhost:8080/',
     interfaceSuffix: '',
 	pageSuffix: '.html'
 };
@@ -42,8 +42,12 @@ config.loadMoreImg = '/assets/images/ajax-loader.gif';
 
 config.INewsType = config.interfaceServer + 'newsType/list';//新闻分类
 config.INewsList = config.interfaceServer + 'news/list';//新闻列表
+config.INewsDetail = config.interfaceServer + 'news/detail?id=';//新闻列表
 config.INewsDetail = config.interfaceServer + 'news/detail';//新闻详情
 config.ISaveSuggest = config.interfaceServer + 'message/sub';//保存留言
+config.IProductType = config.interfaceServer + 'productType/list';//保存留言
+config.IProductList = config.interfaceServer + 'product/list';//产品列表
+config.IProductDetail = config.interfaceServer + 'product/detail?id=';//产品列表
 
 
 /**

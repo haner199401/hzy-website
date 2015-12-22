@@ -11,37 +11,50 @@ html(lang="en")
             img(src="./assets/image/bg_1.png")
 
         section.container.clearfix
-            ul.left_nav.fl
-                li 产品分类
-                li
-                    a 产品分类
-                        span
-                li.active
-                    a 产品分类
-                        span
-                li
-                    a 产品分类
-                        span
-                li
-                    a 产品分类
-                        span
+            ul.left_nav.fl#wu-detail
             .c_right.fr
                 .c_nav
                     a 首页
                     a >
                     a 产品中心
                     a >
-                    a XXXX
+                    a.nav_show 产品分类
                 .c_r_content.productList
-                    ul.clearfix#productList
-                        - var n = 1
-                        while n < 20
-                            li
-                                a(href="product_detail.html")
-                                    img.product_img(src="./assets/image/bg_1.png")
-                                    .product_info=n++
-
-                    include ./com/page
+                    .newsListArea
+                        ul.clearfix#productList
+                        include ./com/page
+                    .newsDetailArea.clearfix.product_detail#news_detail
+                        .p_img.fl
+                            img(src="./assets/image/bg_1.png")
+                        .p_info.fl
+                            span.p_title 奥基塑料
+                            .p_filed
+                                p 规格：
+                                p 尺寸：
+                                p 材质：
+                                p 用处：
 
         include ./com/footer
-        //script(type="text/javascript",src="/assets/scripts/index.js")
+        script(type="text/javascript",src="/assets/scripts/product.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <li>产品分类</li>
+            <li class="active"><a href="javascript:void(0)" data-type="">全部分类<span></span></a></li>
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li><a href="javascript:void(0)" data-type="<!--[=list[i].id || '']-->"><!--[=list[i].name || '']--><span></span></a></li>
+            <!--[}]-->
+
+        script(type="text/html",id="wu-list-tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li><a href="javascript:void(0);" data-id="<!--[=list[i].id]-->"><img src="<!--[=$absImg(list[i].img)]-->" class="product_img"><div class="product_info"><!--[=list[i].name]--></div></a></li>
+            <!--[}]-->
+
+        script(type="text/html",id="news_detail_tmpl").
+            <div class="p_img fl"><img src="<!--[=$absImg(img)]-->"></div>
+            <div class="p_info fl">
+                <span class="p_title"><!--[=name]--></span>
+                <div class="p_filed">
+                    <p>规格：<!--[=spec]--></p>
+                    <p>材质：<!--[=material]--></p>
+                    <p>用处：<!--[=uses]--></p>
+                </div>
+            </div>

@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     revReplace = require('gulp-rev-replace'),
     rev_manifest_file_path = './rev-manifest.json',
 
-    isDeploy = !!0;//部署项目
+    isDeploy = !0;//部署项目
 
 var src = {
     css: 'app/assets/styles/**/*',
@@ -23,7 +23,7 @@ var dest = {
     img: 'dest/assets/image/',
     js: 'dest/assets/scripts/',
     html: 'dest/',
-    rev_path:'dest/**/*.html',
+    rev_path:'dest/*.html',
     rev_asset:'dest/assets/**',
     out_rev_asset:'dest/assets/'
 };
@@ -32,7 +32,7 @@ var dest = {
  * 是否打印log
  * @type {boolean}
  */
-var isLog = !!0;
+var isLog = !0;
 
 //delete dest
 gulp.task('clean', require('del').bind(null, ['dest']));
@@ -82,16 +82,16 @@ gulp.task('templates', function () {
 gulp.task('rev',['scripts','styles','images','templates'], function () {
     return gulp.src(dest.rev_asset)
         .pipe(rev())
-        .pipe(gulp.dest(dest.out_rev_asset))
+        .pipe(gulp.dest('./public/assets/'))
         .pipe(rev.manifest({base: dest.out_rev_asset,merge: true}))
-        .pipe(gulp.dest(dest.out_rev_asset));
+        .pipe(gulp.dest('./public/assets/'));
 });
 
 //replace
 gulp.task("revreplace", ["rev"], function(){
     return gulp.src(dest.rev_path)
         .pipe(revReplace({manifest: gulp.src(rev_manifest_file_path)}))
-        .pipe(gulp.dest(dest.html));
+        .pipe(gulp.dest('./public/'));
 });
 
 
@@ -109,10 +109,10 @@ var task = (function(){
 gulp.task('start',task,function () {
 
     browserSync({
-        notify: false,
+        notify: true,
         port: 8888,
         server: {
-            baseDir: ['dest']
+            baseDir: ['public']
         }
     });
 
